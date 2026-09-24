@@ -1,0 +1,1435 @@
+{
+  "meta": {
+    "model": "llama3.1:8b",
+    "ollama_version": "0.24.0",
+    "temperature": 0.0,
+    "seed": 42,
+    "reps": 2,
+    "n_tasks": 40,
+    "generated_at": "2026-09-24T10:45:03+00:00",
+    "python": "3.12.13",
+    "difficulty_names": {
+      "1": "L1 flat",
+      "2": "L2 nested+arrays",
+      "3": "L3 enums+ranges",
+      "4": "L4 deep+unions"
+    },
+    "methods": [
+      "prompt-only",
+      "json-mode",
+      "schema-constrained",
+      "repair"
+    ],
+    "n_records": 320
+  },
+  "results": {
+    "prompt-only": {
+      "all": {
+        "n": 80,
+        "n_tasks": 40,
+        "parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "strict_parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "schema_valid": {
+          "k": 74,
+          "n": 80,
+          "rate": 0.925,
+          "ci": [
+            0.8013576647568946,
+            0.9741639742254119
+          ],
+          "ci_attempts": [
+            0.8458798391878072,
+            0.9651747507069949
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 74,
+          "n": 80,
+          "rate": 0.925,
+          "ci": [
+            0.8013576647568946,
+            0.9741639742254119
+          ],
+          "ci_attempts": [
+            0.8458798391878072,
+            0.9651747507069949
+          ]
+        },
+        "field_accuracy": 0.9455294011544012,
+        "field_accuracy_micro": 0.9399038461538461,
+        "field_accuracy_when_valid": 0.9474942474942475,
+        "latency_p50_s": 44.37285249950946,
+        "latency_p95_s": 115.45149243924529,
+        "server_latency_p50_s": 43.880805291499996,
+        "server_latency_p95_s": 115.26806630204996,
+        "decode_tok_per_s_p50": 3.343220019204463,
+        "output_tokens_mean": 117.0,
+        "output_tokens_p50": 106.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {
+          "type": 4,
+          "anyOf": 2
+        },
+        "same_output_as_prompt_only": 1.0
+      },
+      "1": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.95,
+        "field_accuracy_micro": 0.9454545454545454,
+        "field_accuracy_when_valid": 0.95,
+        "latency_p50_s": 25.782001707993913,
+        "latency_p95_s": 140.09764569373948,
+        "server_latency_p50_s": 25.587951916,
+        "server_latency_p95_s": 134.849235775,
+        "decode_tok_per_s_p50": 3.8375899884273865,
+        "output_tokens_mean": 60.1,
+        "output_tokens_p50": 61.0,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "2": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9621428571428572,
+        "field_accuracy_micro": 0.950354609929078,
+        "field_accuracy_when_valid": 0.9621428571428572,
+        "latency_p50_s": 46.24629016649851,
+        "latency_p95_s": 72.68667116218421,
+        "server_latency_p50_s": 46.009132208,
+        "server_latency_p95_s": 72.5956482402,
+        "decode_tok_per_s_p50": 3.2719944439527193,
+        "output_tokens_mean": 147.8,
+        "output_tokens_p50": 148.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "3": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9127525252525253,
+        "field_accuracy_micro": 0.90625,
+        "field_accuracy_when_valid": 0.9127525252525253,
+        "latency_p50_s": 33.74769725049555,
+        "latency_p95_s": 58.01867714135007,
+        "server_latency_p50_s": 33.551964375,
+        "server_latency_p95_s": 57.386077398550015,
+        "decode_tok_per_s_p50": 3.281570709438691,
+        "output_tokens_mean": 94.6,
+        "output_tokens_p50": 90.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "4": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 14,
+          "n": 20,
+          "rate": 0.7,
+          "ci": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "ci_attempts": [
+            0.4810271816464765,
+            0.8545227551323956
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 14,
+          "n": 20,
+          "rate": 0.7,
+          "ci": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "ci_attempts": [
+            0.4810271816464765,
+            0.8545227551323956
+          ]
+        },
+        "field_accuracy": 0.9572222222222223,
+        "field_accuracy_micro": 0.9516129032258065,
+        "field_accuracy_when_valid": 0.9726190476190476,
+        "latency_p50_s": 65.66144027050177,
+        "latency_p95_s": 115.52909224134493,
+        "server_latency_p50_s": 65.17844708300001,
+        "server_latency_p95_s": 115.503534075,
+        "decode_tok_per_s_p50": 2.5839510318242085,
+        "output_tokens_mean": 165.5,
+        "output_tokens_p50": 160.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {
+          "type": 4,
+          "anyOf": 2
+        }
+      }
+    },
+    "json-mode": {
+      "all": {
+        "n": 80,
+        "n_tasks": 40,
+        "parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "strict_parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "schema_valid": {
+          "k": 74,
+          "n": 80,
+          "rate": 0.925,
+          "ci": [
+            0.8013576647568946,
+            0.9741639742254119
+          ],
+          "ci_attempts": [
+            0.8458798391878072,
+            0.9651747507069949
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 74,
+          "n": 80,
+          "rate": 0.925,
+          "ci": [
+            0.8013576647568946,
+            0.9741639742254119
+          ],
+          "ci_attempts": [
+            0.8458798391878072,
+            0.9651747507069949
+          ]
+        },
+        "field_accuracy": 0.9455294011544012,
+        "field_accuracy_micro": 0.9399038461538461,
+        "field_accuracy_when_valid": 0.9474942474942475,
+        "latency_p50_s": 89.11011093748675,
+        "latency_p95_s": 184.15152130145572,
+        "server_latency_p50_s": 89.044425167,
+        "server_latency_p95_s": 181.83055688959993,
+        "decode_tok_per_s_p50": 5.86373731491917,
+        "output_tokens_mean": 117.0,
+        "output_tokens_p50": 106.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {
+          "type": 4,
+          "anyOf": 2
+        },
+        "same_output_as_prompt_only": 1.0
+      },
+      "1": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.95,
+        "field_accuracy_micro": 0.9454545454545454,
+        "field_accuracy_when_valid": 0.95,
+        "latency_p50_s": 78.16626895850641,
+        "latency_p95_s": 293.13231404521355,
+        "server_latency_p50_s": 77.622805833,
+        "server_latency_p95_s": 287.15966679725,
+        "decode_tok_per_s_p50": 4.217468425259797,
+        "output_tokens_mean": 60.1,
+        "output_tokens_p50": 61.0,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "2": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9621428571428572,
+        "field_accuracy_micro": 0.950354609929078,
+        "field_accuracy_when_valid": 0.9621428571428572,
+        "latency_p50_s": 82.15364622900961,
+        "latency_p95_s": 139.37107167079233,
+        "server_latency_p50_s": 81.587957375,
+        "server_latency_p95_s": 138.84440579405003,
+        "decode_tok_per_s_p50": 6.844469416438012,
+        "output_tokens_mean": 147.8,
+        "output_tokens_p50": 148.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "3": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9127525252525253,
+        "field_accuracy_micro": 0.90625,
+        "field_accuracy_when_valid": 0.9127525252525253,
+        "latency_p50_s": 58.02933412500715,
+        "latency_p95_s": 125.5979179541464,
+        "server_latency_p50_s": 57.876982854,
+        "server_latency_p95_s": 125.4472823506,
+        "decode_tok_per_s_p50": 5.729715182110828,
+        "output_tokens_mean": 94.6,
+        "output_tokens_p50": 90.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "4": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 14,
+          "n": 20,
+          "rate": 0.7,
+          "ci": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "ci_attempts": [
+            0.4810271816464765,
+            0.8545227551323956
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 14,
+          "n": 20,
+          "rate": 0.7,
+          "ci": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "ci_attempts": [
+            0.4810271816464765,
+            0.8545227551323956
+          ]
+        },
+        "field_accuracy": 0.9572222222222223,
+        "field_accuracy_micro": 0.9516129032258065,
+        "field_accuracy_when_valid": 0.9726190476190476,
+        "latency_p50_s": 109.99714537551336,
+        "latency_p95_s": 210.25302827710257,
+        "server_latency_p50_s": 109.705186521,
+        "server_latency_p95_s": 209.3441423545,
+        "decode_tok_per_s_p50": 5.86373731491917,
+        "output_tokens_mean": 165.5,
+        "output_tokens_p50": 160.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {
+          "type": 4,
+          "anyOf": 2
+        }
+      }
+    },
+    "schema-constrained": {
+      "all": {
+        "n": 80,
+        "n_tasks": 40,
+        "parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "strict_parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "schema_valid": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "field_accuracy": 0.9441594516594517,
+        "field_accuracy_micro": 0.9401913875598086,
+        "field_accuracy_when_valid": 0.9441594516594517,
+        "latency_p50_s": 73.95304260398552,
+        "latency_p95_s": 206.66880114794617,
+        "server_latency_p50_s": 73.69943285400001,
+        "server_latency_p95_s": 206.32090518714998,
+        "decode_tok_per_s_p50": 5.9963269816042,
+        "output_tokens_mean": 117.275,
+        "output_tokens_p50": 106.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {},
+        "same_output_as_prompt_only": 0.925
+      },
+      "1": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.95,
+        "field_accuracy_micro": 0.9454545454545454,
+        "field_accuracy_when_valid": 0.95,
+        "latency_p50_s": 53.073454416997265,
+        "latency_p95_s": 306.6354066770568,
+        "server_latency_p50_s": 52.752297271,
+        "server_latency_p95_s": 298.4055474702,
+        "decode_tok_per_s_p50": 4.566607517936957,
+        "output_tokens_mean": 60.1,
+        "output_tokens_p50": 61.0,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "2": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9621428571428572,
+        "field_accuracy_micro": 0.950354609929078,
+        "field_accuracy_when_valid": 0.9621428571428572,
+        "latency_p50_s": 81.36694541700126,
+        "latency_p95_s": 118.79077353125037,
+        "server_latency_p50_s": 81.17113747900001,
+        "server_latency_p95_s": 118.49391873540007,
+        "decode_tok_per_s_p50": 6.636185902294687,
+        "output_tokens_mean": 147.8,
+        "output_tokens_p50": 148.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "3": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9127525252525253,
+        "field_accuracy_micro": 0.90625,
+        "field_accuracy_when_valid": 0.9127525252525253,
+        "latency_p50_s": 51.89337122900179,
+        "latency_p95_s": 92.52061397260259,
+        "server_latency_p50_s": 51.6452721255,
+        "server_latency_p95_s": 92.4042951694,
+        "decode_tok_per_s_p50": 6.146577230548281,
+        "output_tokens_mean": 94.6,
+        "output_tokens_p50": 90.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "4": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9517424242424243,
+        "field_accuracy_micro": 0.9523809523809523,
+        "field_accuracy_when_valid": 0.9517424242424243,
+        "latency_p50_s": 100.67566189599165,
+        "latency_p95_s": 176.23757844759385,
+        "server_latency_p50_s": 100.4030901875,
+        "server_latency_p95_s": 175.78533628510002,
+        "decode_tok_per_s_p50": 5.043766803578338,
+        "output_tokens_mean": 166.6,
+        "output_tokens_p50": 160.0,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      }
+    },
+    "repair": {
+      "all": {
+        "n": 80,
+        "n_tasks": 40,
+        "parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "strict_parse": {
+          "k": 80,
+          "n": 80,
+          "rate": 1.0,
+          "ci": [
+            0.9123783988027135,
+            1.0
+          ],
+          "ci_attempts": [
+            0.9541818704644728,
+            0.9999999999999999
+          ]
+        },
+        "schema_valid": {
+          "k": 78,
+          "n": 80,
+          "rate": 0.975,
+          "ci": [
+            0.8711863103652591,
+            0.9955731684973186
+          ],
+          "ci_attempts": [
+            0.9133556701442198,
+            0.9931171067970292
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 74,
+          "n": 80,
+          "rate": 0.925,
+          "ci": [
+            0.8013576647568946,
+            0.9741639742254119
+          ],
+          "ci_attempts": [
+            0.8458798391878072,
+            0.9651747507069949
+          ]
+        },
+        "field_accuracy": 0.9432566738816739,
+        "field_accuracy_micro": 0.9376498800959233,
+        "field_accuracy_when_valid": 0.9450068450068451,
+        "latency_p50_s": 46.19537193750148,
+        "latency_p95_s": 141.3664125555966,
+        "server_latency_p50_s": 45.909708708,
+        "server_latency_p95_s": 140.3223727191,
+        "decode_tok_per_s_p50": 3.4445570717164884,
+        "output_tokens_mean": 129.0,
+        "output_tokens_p50": 106.5,
+        "repair_rate": 0.075,
+        "consistency": 1.0,
+        "failure_keywords": {
+          "type": 2
+        },
+        "same_output_as_prompt_only": 0.95
+      },
+      "1": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.95,
+        "field_accuracy_micro": 0.9454545454545454,
+        "field_accuracy_when_valid": 0.95,
+        "latency_p50_s": 26.145035999492393,
+        "latency_p95_s": 161.4980915024251,
+        "server_latency_p50_s": 25.810764625,
+        "server_latency_p95_s": 155.63388846075003,
+        "decode_tok_per_s_p50": 3.616546133453136,
+        "output_tokens_mean": 60.1,
+        "output_tokens_p50": 61.0,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "2": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9621428571428572,
+        "field_accuracy_micro": 0.950354609929078,
+        "field_accuracy_when_valid": 0.9621428571428572,
+        "latency_p50_s": 50.96941783299553,
+        "latency_p95_s": 79.77199828058947,
+        "server_latency_p50_s": 50.750913021,
+        "server_latency_p95_s": 79.01848015,
+        "decode_tok_per_s_p50": 3.373572627769869,
+        "output_tokens_mean": 147.8,
+        "output_tokens_p50": 148.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "3": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "field_accuracy": 0.9127525252525253,
+        "field_accuracy_micro": 0.90625,
+        "field_accuracy_when_valid": 0.9127525252525253,
+        "latency_p50_s": 32.82592354150256,
+        "latency_p95_s": 52.968170998267304,
+        "server_latency_p50_s": 32.444781104,
+        "server_latency_p95_s": 52.51891881075,
+        "decode_tok_per_s_p50": 3.2281599157862404,
+        "output_tokens_mean": 94.6,
+        "output_tokens_p50": 90.5,
+        "repair_rate": 0.0,
+        "consistency": 1.0,
+        "failure_keywords": {}
+      },
+      "4": {
+        "n": 20,
+        "n_tasks": 10,
+        "parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "strict_parse": {
+          "k": 20,
+          "n": 20,
+          "rate": 1.0,
+          "ci": [
+            0.7224672001371107,
+            0.9999999999999999
+          ],
+          "ci_attempts": [
+            0.8388748419471806,
+            1.0
+          ]
+        },
+        "schema_valid": {
+          "k": 18,
+          "n": 20,
+          "rate": 0.9,
+          "ci": [
+            0.5958499732047615,
+            0.9821237869049271
+          ],
+          "ci_attempts": [
+            0.6989663547715128,
+            0.9721335187862319
+          ]
+        },
+        "first_attempt_schema_valid": {
+          "k": 14,
+          "n": 20,
+          "rate": 0.7,
+          "ci": [
+            0.39677814746114537,
+            0.8922087325936989
+          ],
+          "ci_attempts": [
+            0.4810271816464765,
+            0.8545227551323956
+          ]
+        },
+        "field_accuracy": 0.9481313131313132,
+        "field_accuracy_micro": 0.944,
+        "field_accuracy_when_valid": 0.956257014590348,
+        "latency_p50_s": 91.21533254200767,
+        "latency_p95_s": 146.03842875559647,
+        "server_latency_p50_s": 91.169167354,
+        "server_latency_p95_s": 145.79597239225006,
+        "decode_tok_per_s_p50": 2.609083077674353,
+        "output_tokens_mean": 213.5,
+        "output_tokens_p50": 201.0,
+        "repair_rate": 0.3,
+        "consistency": 1.0,
+        "failure_keywords": {
+          "type": 2
+        }
+      }
+    }
+  }
+}
