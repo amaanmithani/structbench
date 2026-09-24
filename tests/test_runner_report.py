@@ -159,8 +159,11 @@ def test_render_markdown_numbers_come_from_json(tmp_path, small_tasks):
     assert "43.2%" in md
     assert md.count("| prompt-only |") == 1 + 4 + 1  # overall + 4 levels + secondary
     assert "L4 deep+unions" in md
+    assert "Headline numbers" in md
+    assert "json-mode: final output byte-identical to prompt-only in 0.0% of runs" in md
     assert "fake:1b" in md
-    header_cols = md.splitlines()[4].count("|")
+    header = next(ln for ln in md.splitlines() if ln.startswith("| Method | Level |"))
+    header_cols = header.count("|")
     for line in md.splitlines():
         if line.startswith("| prompt-only | L"):
             assert line.count("|") == header_cols

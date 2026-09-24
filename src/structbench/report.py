@@ -40,6 +40,45 @@ def _row(method: str, level: str, c: dict[str, Any]) -> str:
     return "| " + " | ".join(cols) + " |"
 
 
+def _headlines(cells: dict[str, dict[str, Any]], names: dict[str, str]) -> list[str]:
+    """Auto-generated summary bullets (every number comes from results.json)."""
+    out = ["### Headline numbers (auto-generated)", ""]
+    hardest = max(names, key=int)
+    per_level = [
+        f"{m} {_pct(per[hardest]['schema_valid']['rate'])}"
+        for m, per in cells.items()
+        if hardest in per
+    ]
+    if per_level:
+        out.append(f"- Schema-valid rate on {names[hardest]}: " + ", ".join(per_level) + ".")
+    overall = [f"{m} {_pct(per['all']['schema_valid']['rate'])}" for m, per in cells.items()]
+    out.append("- Schema-valid rate, all levels: " + ", ".join(overall) + ".")
+    accs = [per["all"]["field_accuracy"] for per in cells.values()]
+    out.append(
+        f"- Field accuracy ranges only from {_pct(min(accs))} to {_pct(max(accs))} across methods."
+    )
+    for m, per in cells.items():
+        same = per["all"].get("same_output_as_prompt_only")
+        if m != "prompt-only" and same is not None:
+            out.append(
+                f"- {m}: final output byte-identical to prompt-only in {_pct(same)} of runs."
+            )
+    if "repair" in cells:
+        c = cells["repair"]["all"]
+        out.append(
+            f"- repair: follow-up turn used in {_pct(c['repair_rate'])} of runs; schema-valid "
+            f"{_pct(c['first_attempt_schema_valid']['rate'])} after the first turn, "
+            f"{_pct(c['schema_valid']['rate'])} after repair."
+        )
+    cons = [
+        per["all"]["consistency"] for per in cells.values() if per["all"]["consistency"] is not None
+    ]
+    if cons:
+        out.append(f"- Lowest cross-rep consistency of any method: {_pct(min(cons))}.")
+    out.append("")
+    return out
+
+
 def render_markdown(results: dict[str, Any]) -> str:
     meta = results["meta"]
     names: dict[str, str] = meta["difficulty_names"]
@@ -52,6 +91,7 @@ def render_markdown(results: dict[str, Any]) -> str:
         f"{meta['n_records']} scored runs. Generated {meta['generated_at']}."
     )
     lines.append("")
+    lines += _headlines(cells, names)
     lines.append("### Overall, by method")
     lines.append("")
     header = (
