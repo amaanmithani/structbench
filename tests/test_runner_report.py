@@ -146,6 +146,10 @@ def test_aggregate_structure(tmp_path, small_tasks):
     assert res["meta"]["methods"] == ["prompt-only", "json-mode"]
     assert set(res["results"]["json-mode"]) == {"all", "1", "2", "3", "4"}
     assert res["results"]["json-mode"]["all"]["n"] == 8
+    # the fake fences prompt-only replies but not json-mode replies
+    assert res["results"]["prompt-only"]["all"]["same_output_as_prompt_only"] == 1.0
+    assert res["results"]["json-mode"]["all"]["same_output_as_prompt_only"] == 0.0
+    assert res["results"]["json-mode"]["all"]["decode_tok_per_s_p50"] > 0
 
 
 def test_render_markdown_numbers_come_from_json(tmp_path, small_tasks):

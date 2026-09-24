@@ -30,6 +30,7 @@ class FakeClient:
             output_tokens=len(content) // 4,
             prompt_tokens=10,
             server_total_s=0.4,
+            eval_s=0.25,
         )
 
 

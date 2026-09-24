@@ -61,8 +61,10 @@ class OllamaClient:
         seed: int = 42,
         num_ctx: int = 4096,
         num_predict: int = 1024,
-        timeout_s: float = 600.0,
+        timeout_s: float = 1800.0,
+        retries: int = 3,
     ) -> None:
+        self.retries = retries
         self.model = model
         self.host = host.rstrip("/")
         self.options: dict[str, Any] = {
@@ -93,12 +95,19 @@ class OllamaClient:
             headers={"Content-Type": "application/json"},
             method="POST",
         )
-        start = time.perf_counter()
-        try:
-            with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:
-                data: dict[str, Any] = json.loads(resp.read())
-        except urllib.error.URLError as exc:
-            raise OllamaError(f"Ollama request failed: {exc}") from exc
+        data: dict[str, Any] = {}
+        for attempt in range(self.retries + 1):
+            start = time.perf_counter()
+            try:
+                with urllib.request.urlopen(req, timeout=self.timeout_s) as resp:
+                    data = json.loads(resp.read())
+                break
+            except (urllib.error.URLError, TimeoutError, ConnectionError) as exc:
+                # Transport failures (e.g. timeouts on a saturated machine) are retried;
+                # they are infrastructure errors, not model output, so they are not scored.
+                if attempt == self.retries:
+                    raise OllamaError(f"Ollama request failed: {exc}") from exc
+                time.sleep(10 * (attempt + 1))
         latency = time.perf_counter() - start
         return ChatResult(
             content=str(data.get("message", {}).get("content", "")),

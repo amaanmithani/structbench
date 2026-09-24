@@ -133,6 +133,12 @@ def summarize(recs: list[Record]) -> dict[str, Any]:
     lat = [float(r["latency_s"]) for r in recs]
     slat = [float(r["server_latency_s"]) for r in recs if r.get("server_latency_s") is not None]
     toks = [float(r["output_tokens"]) for r in recs]
+    # Decode throughput of the first attempt as reported by Ollama (tokens / eval second).
+    rates = [
+        a["output_tokens"] / a["eval_s"]
+        for a in (r["attempts"][0] for r in recs if r.get("attempts"))
+        if a.get("eval_s")
+    ]
     by_task: dict[str, list[str]] = defaultdict(list)
     for r in recs:
         by_task[r["task_id"]].append(r["final_content"])
@@ -159,6 +165,7 @@ def summarize(recs: list[Record]) -> dict[str, Any]:
         "latency_p95_s": percentile(lat, 95),
         "server_latency_p50_s": percentile(slat, 50),
         "server_latency_p95_s": percentile(slat, 95),
+        "decode_tok_per_s_p50": percentile(rates, 50),
         "output_tokens_mean": mean(toks),
         "output_tokens_p50": percentile(toks, 50),
         "repair_rate": mean([1.0 if r["repaired"] else 0.0 for r in recs]),
@@ -171,8 +178,21 @@ def aggregate(recs: list[Record], meta: dict[str, Any]) -> dict[str, Any]:
     methods = list(dict.fromkeys(r["method"] for r in recs))
     diffs = sorted({int(r["difficulty"]) for r in recs})
     cells: dict[str, dict[str, Any]] = {}
+    baseline = {
+        (r["task_id"], r["rep"]): r["final_content"] for r in recs if r["method"] == "prompt-only"
+    }
     for m in methods:
         cells[m] = {"all": summarize([r for r in recs if r["method"] == m])}
+        paired = [
+            r["final_content"] == baseline[(r["task_id"], r["rep"])]
+            for r in recs
+            if r["method"] == m and (r["task_id"], r["rep"]) in baseline
+        ]
+        # Share of runs whose final output is byte-identical to prompt-only's for the
+        # same task and rep: how often the method changed the answer at all.
+        cells[m]["all"]["same_output_as_prompt_only"] = (
+            sum(paired) / len(paired) if paired else None
+        )
         for d in diffs:
             sub = [r for r in recs if r["method"] == m and int(r["difficulty"]) == d]
             if sub:

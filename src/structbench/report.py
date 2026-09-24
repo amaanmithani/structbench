@@ -75,16 +75,19 @@ def render_markdown(results: dict[str, Any]) -> str:
     lines.append("")
     lines.append(
         "| Method | Strict parse (reply is only JSON) | First-attempt schema-valid "
-        "| Repair turn used | Field acc. when schema-valid | Top failure keywords |"
+        "| Repair turn used | Field acc. when schema-valid | Output identical to prompt-only "
+        "| Decode tok/s (p50) | Top failure keywords |"
     )
-    lines.append("|---|---:|---:|---:|---:|---|")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---|")
     for m, per in cells.items():
         c = per["all"]
         kws = ", ".join(f"{k} ({v})" for k, v in list(c["failure_keywords"].items())[:4]) or "-"
         lines.append(
             f"| {m} | {_pct(c['strict_parse']['rate'])} "
             f"| {_pct(c['first_attempt_schema_valid']['rate'])} "
-            f"| {_pct(c['repair_rate'])} | {_pct(c['field_accuracy_when_valid'])} | {kws} |"
+            f"| {_pct(c['repair_rate'])} | {_pct(c['field_accuracy_when_valid'])} "
+            f"| {_pct(c.get('same_output_as_prompt_only'))} "
+            f"| {_num(c.get('decode_tok_per_s_p50', float('nan')))} | {kws} |"
         )
     lines.append("")
     lines.append(
@@ -92,6 +95,7 @@ def render_markdown(results: dict[str, Any]) -> str:
         "contributes its mean over reps), because reps at temperature 0 are strongly "
         "correlated. Attempt-level intervals are in `results/results.json` as `ci_attempts`. "
         "Latency is wall-clock per run including the repair turn when used. "
+        "Decode tok/s is Ollama's eval_count / eval_duration for the first attempt. "
         "Failure keywords count runs (not errors) whose final output failed that JSON Schema "
         "keyword; `parse` = no JSON object recovered."
     )
