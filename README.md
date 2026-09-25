@@ -1,5 +1,7 @@
 # structbench
 
+> **Credits.** Built by Amaan Mithani with Claude (Anthropic) as the AI coding assistant.
+
 **How reliably does a local LLM produce JSON that matches a schema, and how much does the
 method you use to ask for it matter?**
 
