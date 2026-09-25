@@ -11,6 +11,12 @@ every reply for parseability, schema validity and field-level correctness agains
 truth. Every number in the results section below is rendered from `results/results.json`
 by `structbench report`. None are typed by hand.
 
+## See it running
+
+![Terminal: task-suite audit, the report rendered from results.json, and all 320 stored replies re-validated](docs/img/validate-report-rescore.svg)
+
+*Local run, 2026-09-26, without Ollama (not available on this machine, so no new model calls were made). It shows the task audit, `structbench report` rendering the committed `results/results.json`, and a short throwaway script (`rescore.py`, not in the repo) that re-parses and re-validates every stored reply in the committed `results/raw.jsonl` with `structbench.scoring`. The re-validation agrees with the recorded result on 320 of 320 runs.*
+
 ## Methods
 
 All four methods send **the same prompt text**: one system prompt plus a user message
